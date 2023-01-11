@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">:root{--docsifytabs-border-color:#ededed;--docsifytabs-border-px:1px;--docsifytabs-margin:1.5em 0;--docsifytabs-tab-background:#f8f8f8;--docsifytabs-tab-background--active:var(--docsifytabs-content-background);--docsifytabs-tab-color:#999;--docsifytabs-tab-color--active:inherit;--docsifytabs-tab-highlight-px:3px;--docsifytabs-tab-highlight-color:var(--theme-color,currentColor);--docsifytabs-tab-padding:0.6em 1em;--docsifytabs-content-background:inherit;--docsifytabs-content-padding:0.5rem 1.75rem}.docsify-tabs:before,.docsify-tabs__tab{z-index:1}.docsify-tabs__tab--active,.docsify-tabs__tab:focus{z-index:2}.docsify-tabs{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative}.docsify-tabs:before{content:"";-ms-flex-order:0;order:0;-ms-flex:1;flex:1 1}.docsify-tabs__tab{-ms-flex-order:-1;order:-1;position:relative;margin:0;font-size:inherit;appearance:none}.docsify-tabs__content{visibility:hidden;position:absolute;overflow:hidden;height:0;width:100%}.docsify-tabs__tab--active+.docsify-tabs__content{visibility:visible;position:relative;overflow:auto;height:auto}[class*=docsify-tabs--]{margin:1.5em 0;margin:var(--docsifytabs-margin)}[class*=docsify-tabs--] .docsify-tabs__tab{padding:.6em 1em;padding:var(--docsifytabs-tab-padding);background:#f8f8f8;background:var(--docsifytabs-tab-background);color:#999;color:var(--docsifytabs-tab-color)}[class*=docsify-tabs--] .docsify-tabs__tab--active{background:inherit;background:var(--docsifytabs-tab-background--active);color:inherit;color:var(--docsifytabs-tab-color--active)}[class*=docsify-tabs--] .docsify-tabs__content{padding:.5rem 1.75rem;padding:var(--docsifytabs-content-padding);background:inherit;background:var(--docsifytabs-content-background)}.docsify-tabs--classic .docsify-tabs__content,.docsify-tabs--classic .docsify-tabs__tab,.docsify-tabs--classic:before{border-width:1px;border-color:#ededed;border:var(--docsifytabs-border-px) solid var(--docsifytabs-border-color)}.docsify-tabs--classic:before{margin-right:1px;margin-right:var(--docsifytabs-border-px);border-top-width:0;border-left-width:0;border-right-width:0}.docsify-tabs--classic .docsify-tabs__tab:first-of-type{border-top-left-radius:var(--docsifytabs-border-radius-px)}.docsify-tabs--classic .docsify-tabs__tab:last-of-type{border-top-right-radius:var(--docsifytabs-border-radius-px)}.docsify-tabs--classic .docsify-tabs__tab~.docsify-tabs__tab{margin-left:-1px;margin-left:calc(0px - var(--docsifytabs-border-px))}.docsify-tabs--classic .docsify-tabs__tab--active{border-bottom-width:0;box-shadow:inset 0 3px 0 0 currentColor;box-shadow:inset 0 var(--docsifytabs-tab-highlight-px) 0 0 var(--docsifytabs-tab-highlight-color)}.docsify-tabs--classic .docsify-tabs__content{margin-top:-1px;margin-top:calc(0px - var(--docsifytabs-border-px));border-top:0;border-radius:0 ;border-radius:0 var(--docsifytabs-border-radius-px) var(--docsifytabs-border-radius-px) var(--docsifytabs-border-radius-px)}.docsify-tabs--material .docsify-tabs__tab{margin-bottom:2px;margin-bottom:calc(var(--docsifytabs-tab-highlight-px) - var(--docsifytabs-border-px));background:transparent;border:0}.docsify-tabs--material .docsify-tabs__tab--active{box-shadow:0 3px 0 0 currentColor;box-shadow:0 var(--docsifytabs-tab-highlight-px) 0 0 var(--docsifytabs-tab-highlight-color);background:transparent}.docsify-tabs--material .docsify-tabs__content{border-width:1px 0;border-width:var(--docsifytabs-border-px) 0;border-style:solid;border-color:#ededed;border-color:var(--docsifytabs-border-color)}</style>
+    
+    <title>在UK8S中使用UDISK 容器云 UK8S_文档中心_UCloud中立云计算服务商</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="备注:">
+    <meta name="keywords" content="UCloud 容器云 UK8S 1. 存储类 StorageClass 2. 创建持久化存储卷声明 PVC 3. 在 Pod 中使用 PVC ">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <link rel="stylesheet" href="./toc.css">
+    <link rel="stylesheet" href="./index_files/icon_division.min.css">
+    <link rel="stylesheet" href="./index_files/icon.min.css">
+    <link rel="stylesheet" href="./index_files/udocs.css">
+    <link rel="stylesheet" href="./index_files/prism.css">
+    <link rel="preconnect" href="https://www.ucloud.cn/">
+    <link rel="preconnect" href="https://static.ucloud.cn/">
+    <link rel="preconnect" href="https://in.hotjar.com/">
+    <script async="" type="text/javascript" src="./index_files/initMatomo_docs.js"></script>
+<script src="./toc.js"></script>
+  <script async="" defer="" src="./index_files/m.js"></script><script src="./index_files/configs.php" async="" defer=""></script><style type="text/css">.medium-zoom-overlay{position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .3s;will-change:opacity}.medium-zoom--open .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s}.medium-zoom-image--open{position:relative;cursor:pointer;cursor:zoom-out;will-change:transform}</style><style type="text/css">.docsify-copy-code-button,.docsify-copy-code-button span{cursor:pointer;transition:all .25s ease}.docsify-copy-code-button{position:absolute;z-index:1;top:0;right:0;overflow:visible;padding:.65em .8em;border:0;border-radius:0;outline:0;font-size:1em;background:grey;background:var(--theme-color,grey);color:#fff;opacity:0}.docsify-copy-code-button span{border-radius:3px;background:inherit;pointer-events:none}.docsify-copy-code-button .error,.docsify-copy-code-button .success{position:absolute;z-index:-100;top:50%;left:0;padding:.5em .65em;font-size:.825em;opacity:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.docsify-copy-code-button.error .error,.docsify-copy-code-button.success .success{opacity:1;-webkit-transform:translate(-115%,-50%);transform:translate(-115%,-50%)}.docsify-copy-code-button:focus,pre:hover .docsify-copy-code-button{opacity:1}</style><style type="text/css">.docsify-pagination-container{display:flex;flex-wrap:wrap;justify-content:space-between;overflow:hidden;margin:5em 0 1em;border-top:1px solid rgba(0,0,0,.07)}.pagination-item{max-width: 21.43rem;margin-top:2.5em}.pagination-item a,.pagination-item a:hover{text-decoration:none}.pagination-item a{color:currentColor}.pagination-item a:hover .pagination-item-title{text-decoration:underline}.pagination-item:not(:last-child) a .pagination-item-label,.pagination-item:not(:last-child) a .pagination-item-title{opacity:.3;transition:all .2s}.pagination-item:last-child .pagination-item-label,.pagination-item:not(:last-child) a:hover .pagination-item-label{opacity:.6}.pagination-item:not(:last-child) a:hover .pagination-item-title{opacity:1}.pagination-item-label{margin-bottom: 0.286rem;font-size:.8em}.pagination-item-label>*{line-height:1;vertical-align:middle}.pagination-item-label svg{height:.8em;width:.8em;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px}.pagination-item--next{margin-left:auto;text-align:right}.pagination-item--next svg{margin-left:.5em}.pagination-item--previous svg{margin-right:.5em}.pagination-item-title{font-size:14px}</style><script async="" src="./index_files/feedback.js"></script><style data-emotion="css"></style><style data-emotion="css"></style><style>.fb-btn-open {
+    width: 60px;
+    height: 54px;
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    z-index: 102;
+    cursor: pointer;
+    background-size: contain;
+    background-image: url(https://static.ucloud.cn/14184081ff4179c045f13fa2f0189eaf.png);
+    transform: rotateY(180deg);
+}
+.fb-btn-open:hover {
+    background-image: url(https://static.ucloud.cn/5cb4028643116f124976c1b76acc9b6d.png);
+}
+.fb-btn-close {
+    width: 60px;
+    height: 54px;
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    z-index: 102;
+    cursor: pointer;
+    background-size: contain;
+    background-image: url(https://www-s.ucloud.cn/2022/07/26d580a1371f39fc0c86c78dff0af09e_1657167370649.png);
+    transform: rotateY(180deg);
+}
+.fd-hover-items {
+    border-radius: 4px;
+    font-size: 14px;
+    position: relative;
+    right: 8px;
+    padding: 8px 0px;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 16px 0px, rgb(0 0 0 / 8%) 0px 16px 24px -8px, rgb(0 0 0 / 5%) 0px 0px 16px 0px, rgb(0 0 0 / 8%) 0px -2px 0px 0px inset !important;
+}
+.fd-hover-items i {
+    color: rgb(56, 96, 244);
+}
+
+
+</style><script async="" src="./index_files/feedback.js"></script><style data-emotion="css"></style><style data-emotion="css"></style><style>.fb-btn-open {
+    width: 60px;
+    height: 54px;
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    z-index: 102;
+    cursor: pointer;
+    background-size: contain;
+    background-image: url(https://static.ucloud.cn/14184081ff4179c045f13fa2f0189eaf.png);
+    transform: rotateY(180deg);
+}
+.fb-btn-open:hover {
+    background-image: url(https://static.ucloud.cn/5cb4028643116f124976c1b76acc9b6d.png);
+}
+.fb-btn-close {
+    width: 60px;
+    height: 54px;
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    z-index: 102;
+    cursor: pointer;
+    background-size: contain;
+    background-image: url(https://www-s.ucloud.cn/2022/07/26d580a1371f39fc0c86c78dff0af09e_1657167370649.png);
+    transform: rotateY(180deg);
+}
+.fd-hover-items {
+    border-radius: 4px;
+    font-size: 14px;
+    position: relative;
+    right: 8px;
+    padding: 8px 0px;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 16px 0px, rgb(0 0 0 / 8%) 0px 16px 24px -8px, rgb(0 0 0 / 5%) 0px 0px 16px 0px, rgb(0 0 0 / 8%) 0px -2px 0px 0px inset !important;
+}
+.fd-hover-items i {
+    color: rgb(56, 96, 244);
+}
+
+
+</style></head>
+
+  <body data-page="/uk8s/volume/udisk.md" class="ready sticky" data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+    <main><button class="sidebar-toggle" aria-label="Menu"><div class="sidebar-toggle-button"><span></span><span></span><span></span></div></button><section class="content"><div class="content-warp"><article class="markdown-section" id="main"><div id="toptools_wrap" class="toptools showdots"><div class="dots-warp"><span class="dots"></span></div><div class="icon__doc_pdf pdfBtnhover pdfBtn"><div class="pdf_drawer"><a href="https://docs.ucloud.cn/uk8s/volume/udisk.pdf" target="_blank" class=" doc_print xpath_not">当前页</a>
+<a href="https://docs.ucloud.cn/uk8s/mdToPdf/uk8s.pdf" target="_blank" class=" doc_pdf xpath_not">全部<span class="btn_title">下载PDF</span></a></div></div>
+<a href="https://github.com/UCloudDoc-Team/uk8s/blob/master/volume/udisk.md" target="_blank" class="github_btn icon__Github xpath_not"><span class="btn_title">前往GitHub</span></a>
+<a target="_blank" class="icon__console console_title xpath_not"><span class="btn_title">前往控制台</span></a>
+
+</div>
+
+
+
+
+<h1 id="在uk8s中使用udisk"><a href="https://docs.ucloud.cn/uk8s/volume/udisk?id=%e5%9c%a8uk8s%e4%b8%ad%e4%bd%bf%e7%94%a8udisk" data-id="在uk8s中使用udisk" class="anchor"><span>在UK8S中使用UDISK</span></a></h1><p>UK8S支持直接在集群中使用UDisk作为持久化存储卷。</p><p><strong>备注:</strong></p><ol><li><p>所有云主机均支持 SSD/SATA UDisk，<strong>如果节点的云主机类型为快杰，则也支持 RSSD UDisk</strong>；</p></li><li><p>SSD/SATA UDisk的最小值为 1GB，最大值为8000GB，RSSD UDisk 最大值为 32000GB；</p></li><li><p>UDisk和云主机必须位于同一可用区，如果您的集群是跨可用区模式，在应用部署的时候请注意。</p></li><li><p><strong>RSSD云盘有额外的限制条件，请见<a href="https://docs.ucloud.cn/uk8s/volume/rssdudisk">在UK8S中使用RSSD UDisk</a>。</strong></p></li></ol><h2 id="_1-存储类-storageclass"><a href="https://docs.ucloud.cn/uk8s/volume/udisk?id=_1-%e5%ad%98%e5%82%a8%e7%b1%bb-storageclass" data-id="_1-存储类-storageclass" class="anchor"><span>1. 存储类 StorageClass</span></a></h2><p>在创建持久化存储卷（PersistentVolume）之前，你需要先创建 StorageClass，然后在 PVC 中使用 StorageClassName。</p><p>UK8S 集群默认创建了两个 StorageClass，你也可以创建一个新的StorageClass，示例及说明如下：</p><pre v-pre="" data-lang="yaml"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> storage.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> StorageClass
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> udisk<span class="token punctuation">-</span>ssd<span class="token punctuation">-</span>test
+<span class="token key atrule">provisioner</span><span class="token punctuation">:</span> udisk.csi.ucloud.cn <span class="token comment">#存储供应方，此处不可更改。</span>
+<span class="token key atrule">parameters</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"ssd"</span>   <span class="token comment"># 存储介质，支持ssd和sata，必填</span>
+  <span class="token key atrule">fsType</span><span class="token punctuation">:</span> <span class="token string">"ext4"</span>    <span class="token comment"># 文件系统，必填</span>
+  <span class="token key atrule">udataArkMode</span><span class="token punctuation">:</span> <span class="token string">"no"</span>   <span class="token comment"># 是否开启方舟模式，默认不开启，非必填</span>
+  <span class="token key atrule">chargeType</span><span class="token punctuation">:</span> <span class="token string">"month"</span> <span class="token comment"># 付费类型，支持dynamic、month、year,不填默认为按小时。</span>
+  <span class="token key atrule">quantity</span><span class="token punctuation">:</span> <span class="token string">"1"</span> <span class="token comment"># 购买时长，dynamic无需填写，可购买1-9个月，或1-10年</span>
+<span class="token key atrule">reclaimPolicy</span><span class="token punctuation">:</span> Delete  <span class="token comment"># PV回收策略，支持Delete和Retain，默认为Delete，非必填</span>
+<span class="token key atrule">volumeBindingMode</span><span class="token punctuation">:</span> WaitForFirstConsumer   <span class="token comment"># 强烈建议配置该参数</span>
+<span class="token key atrule">mountOptions</span><span class="token punctuation">:</span>   
+  <span class="token punctuation">-</span> debug
+  <span class="token punctuation">-</span> rw</code><button class="docsify-copy-code-button"><span class="label">Copy</span><span class="error">Error</span><span class="success">Success</span></button></pre><p>备注：1.15之前的Kubernetes版本，mountOptions无法正常使用，请勿填写，详见<a href="https://github.com/kubernetes/kubernetes/pull/80191" target="_blank" rel="noopener">Issue80191</a></p><h2 id="_2-创建持久化存储卷声明-pvc"><a href="https://docs.ucloud.cn/uk8s/volume/udisk?id=_2-%e5%88%9b%e5%bb%ba%e6%8c%81%e4%b9%85%e5%8c%96%e5%ad%98%e5%82%a8%e5%8d%b7%e5%a3%b0%e6%98%8e-pvc" data-id="_2-创建持久化存储卷声明-pvc" class="anchor"><span>2. 创建持久化存储卷声明 PVC</span></a></h2><h3 id="_21-新建-udisk"><a href="https://docs.ucloud.cn/uk8s/volume/udisk?id=_21-%e6%96%b0%e5%bb%ba-udisk" data-id="_21-新建-udisk" class="anchor"><span>2.1 新建 UDisk</span></a></h3><blockquote>
+<p>使用新建 UDisk，则可直接创建 PVC 对象，CSI 会自动创建 UDisk 并关联。</p></blockquote>
+<pre v-pre="" data-lang="yaml"><code class="lang-yaml"><span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolumeClaim
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>pvc<span class="token punctuation">-</span>claim
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> ReadWriteOnce
+<span class="token comment">## storageClassName必须与上文创建的 StorageClass 的name一致</span>
+  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> udisk<span class="token punctuation">-</span>ssd<span class="token punctuation">-</span>test
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+    <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+      <span class="token key atrule">storage</span><span class="token punctuation">:</span> 20Gi</code><button class="docsify-copy-code-button"><span class="label">Copy</span><span class="error">Error</span><span class="success">Success</span></button></pre><h3 id="_22-使用已有-udisk"><a href="https://docs.ucloud.cn/uk8s/volume/udisk?id=_22-%e4%bd%bf%e7%94%a8%e5%b7%b2%e6%9c%89-udisk" data-id="_22-使用已有-udisk" class="anchor"><span>2.2 使用已有 UDisk</span></a></h3><blockquote>
+<p>如需使用已有 UDisk，需先创建 PV 对象并与已有 UDisk 绑定，再创建 PVC 对象、使用与 PV 相同的声明进行关联</p></blockquote>
+<h4 id="创建持久化存储卷-pv"><a href="https://docs.ucloud.cn/uk8s/volume/udisk?id=%e5%88%9b%e5%bb%ba%e6%8c%81%e4%b9%85%e5%8c%96%e5%ad%98%e5%82%a8%e5%8d%b7-pv" data-id="创建持久化存储卷-pv" class="anchor"><span>创建持久化存储卷 PV</span></a></h4><pre v-pre="" data-lang="yaml"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolume
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>pvc<span class="token punctuation">-</span>claim
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ReadWriteOnce
+  <span class="token key atrule">capacity</span><span class="token punctuation">:</span>
+    <span class="token key atrule">storage</span><span class="token punctuation">:</span> 20Gi
+  <span class="token key atrule">csi</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> udisk.csi.ucloud.cn
+    <span class="token key atrule">volumeAttributes</span><span class="token punctuation">:</span>
+      <span class="token key atrule">type</span><span class="token punctuation">:</span> ssd <span class="token comment"># 磁盘类型，枚举值为ssd,sata,rssd</span>
+    <span class="token key atrule">volumeHandle</span><span class="token punctuation">:</span> bs<span class="token punctuation">-</span>qg55w254 <span class="token comment"># 请修改为自己的UDiskId</span>
+<span class="token comment">#  nodeAffinity：强烈建议添加此字段</span>
+  <span class="token key atrule">persistentVolumeReclaimPolicy</span><span class="token punctuation">:</span> Retain
+<span class="token comment">#  storageClassName必须与上文创建的 StorageClass 的name一致</span>
+  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> udisk<span class="token punctuation">-</span>ssd<span class="token punctuation">-</span>test</code><button class="docsify-copy-code-button"><span class="label">Copy</span><span class="error">Error</span><span class="success">Success</span></button></pre><p>注意：根据<a href="https://docs.ucloud.cn/uk8s/troubleshooting/storage?id=_9-%e6%8c%82%e8%bd%bdudisk%e7%9a%84pod%e8%b0%83%e5%ba%a6%e9%97%ae%e9%a2%98">使用UDisk的Pod调度策略</a>，为了保证后续调度可以顺利执行，强烈建议您创建时为PV添加<code>nodeAffinity</code>字段。由于不同版本以及不同Storage
+Class本部分的内容不尽相同，可以参照相同Storage Class CSI自动自动创建出来PV的对应字段。</p><h4 id="_23-创建-pvc-并与-pv-关联"><a href="https://docs.ucloud.cn/uk8s/volume/udisk?id=_23-%e5%88%9b%e5%bb%ba-pvc-%e5%b9%b6%e4%b8%8e-pv-%e5%85%b3%e8%81%94" data-id="_23-创建-pvc-并与-pv-关联" class="anchor"><span>2.3 创建 PVC 并与 PV 关联</span></a></h4><p><strong>spec.storageClassName</strong>、<strong>spec.resources.requests.storage</strong>、<strong>volumeName</strong>需要与pv相对应。</p><pre v-pre="" data-lang="yaml"><code class="lang-yaml"><span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolumeClaim
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>pvc<span class="token punctuation">-</span>claim
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> ReadWriteOnce
+  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> udisk<span class="token punctuation">-</span>ssd<span class="token punctuation">-</span>test
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+    <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+      <span class="token key atrule">storage</span><span class="token punctuation">:</span> 20Gi
+  <span class="token key atrule">volumeName</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>pvc<span class="token punctuation">-</span>claim</code><button class="docsify-copy-code-button"><span class="label">Copy</span><span class="error">Error</span><span class="success">Success</span></button></pre><h2 id="_3-在-pod-中使用-pvc"><a href="https://docs.ucloud.cn/uk8s/volume/udisk?id=_3-%e5%9c%a8-pod-%e4%b8%ad%e4%bd%bf%e7%94%a8-pvc" data-id="_3-在-pod-中使用-pvc" class="anchor"><span>3. 在 Pod 中使用 PVC</span></a></h2><pre v-pre="" data-lang="yaml"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> uhub.service.ucloud.cn/ucloud/nginx<span class="token punctuation">:</span>latest
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> test
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /data
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> test
+    <span class="token key atrule">persistentVolumeClaim</span><span class="token punctuation">:</span>
+      <span class="token key atrule">claimName</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>pvc<span class="token punctuation">-</span>claim</code><button class="docsify-copy-code-button"><span class="label">Copy</span><span class="error">Error</span><span class="success">Success</span></button></pre><p></p><p class="upTime">最近更新时间：<span>2022-12-23 10:48:52</span></p><p></p><div class="page-footer-copyright"><p><a class="xpath_not">Copyright © 2012-2023 UCloud 优刻得科技股份有限公司</a><a class="xpath_not" target="_blank" href="https://beian.miit.gov.cn/">沪ICP备12020087号</a></p><p><a class="wwwbtn xpath_not" target="_blank" href="https://www.ucloud.cn/">进入官网</a></p></div><div class="docsify-pagination-container">
+        <div class="pagination-item pagination-item--previous">
+          <a class="pagination-btn xpath_not" href="https://docs.ucloud.cn/uk8s/volume/intro">
+            <div class="pagination-item-label">
+              <svg class="icon" width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+                <polyline fill="none" vector-effect="non-scaling-stroke" points="8,2 2,8 8,14"></polyline>
+              </svg>
+              <span>PREVIOUS</span>
+            </div>
+            <div class="pagination-item-title">Volume 介绍</div>
+          </a>
+        </div>
+      
+        <div class="pagination-item pagination-item--next">
+          <a class="pagination-btn xpath_not" href="https://docs.ucloud.cn/uk8s/volume/rssdudisk">
+            <div class="pagination-item-label">
+              <span>NEXT</span>
+              <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+                <polyline fill="none" vector-effect="non-scaling-stroke" points="2,2 8,8 2,14"></polyline>
+              </svg>
+            </div>
+            <div class="pagination-item-title">在 UK8S 中使用 RSSD UDisk</div>
+          </a>
+        </div>
+      </div><div class="ucloudtalk_wrap" id="ucloudtalk"> <div class="ucloudtalk">
+    <iframe class="ucloudtalk-frame" title="Comments" scrolling="no" src="./index_files/ucloudtalk.html" loading="lazy"></iframe>
+  </div></div></article></div></section></main>
+    
+   
+    <script type="text/javascript" src="./index_files/jquery-1.7.1.min.js"></script>
+    <!-- <script type="text/javascript" src="/vendor/js/initFeedback.js?v=2022061101"></script> -->
+    <script type="text/javascript" src="./index_files/inittalk.js"></script>
+    <script type="text/javascript" src="./index_files/core.min.js"></script>
+    <script type="text/javascript" src="./index_files/zoom-image.js"></script>
+    <script type="text/javascript" src="./index_files/docsify-copy-code.min.js"></script>
+    <script type="text/javascript" src="./index_files/docsify-pagination.js"></script>
+    <script type="text/javascript" src="./index_files/prism-c.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-cpp.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-go.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-json.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-java.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-lua.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-python.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-bash.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-sql.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-yaml.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-php.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-hcl.js"></script>
+    <script type="text/javascript" src="./index_files/prism-swift.min.js"></script>
+    <script type="text/javascript" src="./index_files/prism-objectivec.min.js"></script>
+    <script type="text/javascript" src="./index_files/tabs.js"></script>
+    <script type="text/javascript" src="./index_files/polyfill.min.js"></script>
+    <script type="text/javascript" src="./index_files/glossary.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
+    <script type="text/javascript">
+      let vConsole = new VConsole()
+      console.log('test')
+    </script> -->
+    
+    <script type="text/javascript" src="./index_files/feedback-load.js" async=""></script>
+    <!-- 弹窗代码 -->
+    <script type="text/javascript" src="./index_files/survey.js" async=""></script>
+    <!-- Hotjar Tracking Code for https://ucloud.cn -->
+    <!-- <script>
+      ;(function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            ;(h.hj.q = h.hj.q || []).push(arguments)
+          }
+        h._hjSettings = {
+          hjid: 1469719,
+          hjsv: 6,
+        }
+        a = o.getElementsByTagName('head')[0]
+        r = o.createElement('script')
+        r.async = 1
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv
+        a.appendChild(r)
+      })(window, document, 'https://hotjar-static.ucloud.cn/c/hotjar-', '.js?sv=')
+    </script> -->
+  
+
+<div class="progress" style="opacity: 0; width: 0%;"></div><div><div id="uc-fe-message-content-wrap" class="css-1x7psyl-MessageContentWrap e1t4tau67" style="margin-top: 20px;"></div></div><div id="feedbackDom"><div><div><div class="fd-c-btn fb-btn-open"></div></div></div></div><div><div id="uc-fe-message-content-wrap" class="css-1x7psyl-MessageContentWrap e1t4tau67" style="margin-top: 20px;"></div></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

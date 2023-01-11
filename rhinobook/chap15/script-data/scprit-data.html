@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dataset example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script id="custom-data1" type="text/x-custom-data">
+ICAgICAgICAgICAgbGV0IG51bWJlciA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoIiNteWV4
+YW1wbGUiKS5kYXRhc2V0LnNlY3Rpb25OdW1iZXI7CiAgICAgICAgICAgIGxldCBkID0gZG9j
+dW1lbnQucXVlcnlTZWxlY3RvcigiI2RhdGFzZXQiKTsKICAgICAgICAgICAgZC50ZXh0Q29u
+dGVudCA9IG51bWJlcjsKICAgICAgICAgICAgY29uc29sZS5sb2coInNlY3Rpb24gbnVtYmVy
+IGlzOiAiLmNvbmNhdChudW1iZXIpKTsK
+        </script>
+    </head>
+    <body>
+        <span id="dataset"></span>
+        <script>
+            let data1 = document.querySelector("#custom-data1");
+            let d = document.querySelector("#dataset");
+            d.textContent = data1.textContent;
+        </script>
+    </body>
+</html>
+
+

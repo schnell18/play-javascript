@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shift key pressed</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1 id="h1" >Shift key pressed: </h1>
+        <input id="dataentry" type="text" placeholder="enter a number"></input>
+        <script>
+            let d = document.querySelector("#dataentry");
+            d.addEventListener("keyup", (event) => {
+              let h1 = document.querySelector("#h1");
+              if (event.shiftKey) {
+                h1.innerHTML = h1.innerHTML + " true";
+                console.log("shift key pressed is: ".concat(true));
+              } else {
+                h1.innerHTML = h1.innerHTML + " false";
+                console.log("shift key pressed is: ".concat(false));
+              }
+            });
+        </script>
+    </body>
+</html>
+
