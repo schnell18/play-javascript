@@ -1,5 +1,4 @@
 import { Template } from 'meteor/templating';
-// import { TasksCollection } from '/imports/api/TasksCollection';
 
 import './Task.html';
 
