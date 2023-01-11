@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dataset example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1 id="myexample" data-section-number="1.1">Dataset example</h1>
+        <span id="dataset"></span>
+        <script>
+            let number = document.querySelector("#myexample").dataset.sectionNumber;
+            let d = document.querySelector("#dataset");
+            d.textContent = number;
+            console.log("section number is: ".concat(number));
+        </script>
+    </body>
+</html>
+
